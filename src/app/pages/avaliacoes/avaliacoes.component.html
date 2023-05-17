@@ -1,0 +1,98 @@
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1><i class="bi bi-grid"></i> Nova Avaliação</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="avaliacoes">Avaliações</a></li>
+        <li class="breadcrumb-item active">Nova Avaliação</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Status:</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2">
+        <div class="card">
+          <img src="assets/img/empresa-xpto.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">Empresa XPTO</h5>
+            <h6 class="card-subtitle mb-2 text-center">Fornecedor</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Nome da Avaliação</h5>
+          </div>
+        </div>
+      </div><!-- 2 -->
+
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Questionários</h5>
+
+            <div class="demo-button-container">
+              <button mat-raised-button (click)="addData()" class="demo-button">
+                Adicionar
+              </button>
+              <button
+                  mat-raised-button
+                  [disabled]="!dataToDisplay.length"
+                  (click)="removeData()"
+                  class="demo-button">
+                Excluir
+              </button>
+            </div>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Nome do produto</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+              </ng-container>
+
+              <!-- describe Column -->
+              <ng-container matColumnDef="describe">
+                <th mat-header-cell *matHeaderCellDef>Descrição</th>
+                <td mat-cell *matCellDef="let element">{{element.describe}}</td>
+              </ng-container>
+
+              <!-- points Column -->
+              <ng-container matColumnDef="points">
+                <th mat-header-cell *matHeaderCellDef>Pontuação</th>
+                <td mat-cell *matCellDef="let element">{{element.points}}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+          </div>
+        </div>
+
+
+      </div><!--3 -->
+
+
+
+    </div>
+  </section>
+
+</main><!-- End #main -->

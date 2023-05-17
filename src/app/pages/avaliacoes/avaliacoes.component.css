@@ -1,0 +1,20 @@
+.demo-table {
+  width: 100%;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button {
+  margin-left: 8px;
+  border: 1px solid #C36118;
+  border-radius: 10px;
+  opacity: 1;
+  color: #C36118;
+  background-color: transparent;
+}
+
+table{
+  color: #fff;
+}
